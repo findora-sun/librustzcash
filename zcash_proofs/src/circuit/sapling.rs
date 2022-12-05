@@ -29,6 +29,7 @@ use group::ff::PrimeFieldBits;
 pub const TREE_DEPTH: usize = SAPLING_COMMITMENT_TREE_DEPTH;
 
 /// This is an instance of the `Spend` circuit.
+#[derive(Clone)]
 pub struct Spend {
     /// Pedersen commitment to the value being spent
     pub value_commitment: Option<ValueCommitment>,
@@ -55,6 +56,7 @@ pub struct Spend {
 }
 
 /// This is an output circuit instance.
+#[derive(Clone)]
 pub struct Output {
     /// Pedersen commitment to the value being spent
     pub value_commitment: Option<ValueCommitment>,
