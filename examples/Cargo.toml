@@ -4,8 +4,8 @@ version = "0.8.0"
 edition = "2021"
 
 [dependencies]
-zcash_primitives = { version = "0.8", path = "../zcash_primitives" }
-zcash_proofs = { version = "0.8", path = "../zcash_proofs" }
+zcash_primitives = { version = "0.8", path = "../zcash_primitives", default-features = false }
+zcash_proofs = { version = "0.8", path = "../zcash_proofs", default-features = false }
 
 bellman = { version = "0.13.1", default-features = false, features = ["groth16"] }
 bls12_381 = "0.7"
@@ -20,7 +20,3 @@ directories = { version = "4", optional = true }
 redjubjub = "0.5"
 wagyu-zcash-parameters = { version = "0.2", optional = true }
 rand_xorshift = "0.3"
-
-[features]
-default = ["multicore"]
-multicore = ["bellman/multicore"]
